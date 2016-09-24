@@ -1,0 +1,50 @@
+﻿<div class="row">
+    <ol class="breadcrumb" style="margin-top: 20px">
+        <li><a href="#/home">Home</a></li>
+        <li><a href="#/atividades">Atividades</a></li>
+        <li class="active">Nova</li>
+    </ol>
+    <div class="row" ng-init="novo()">
+        <div class="col-lg-12">
+            <div class="panel panel-default">
+                <div class="panel-heading text-center"> <h3>Nova atividade</h3></div>
+                <div class="panel-body">
+                    <form>
+                        <div class="form-group">
+                            <div class="col-lg-6">
+                                <label class="control-label">Nome:</label>
+                                <input type="text" class="form-control" ng-model="formData.nome" required>
+                            </div>
+                            <div class="col-lg-6">
+                                <label class="control-label">Projeto:</label>
+                                <select ng-model="formData.idProjeto" ng-options="val.nome for val in projetos" class="form-control"></select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-lg-6">
+                                <label class="control-label">Profissional:</label>
+                                <select ng-model="formData.Profissional" ng-options="val.nome for val in profissionais track by val.id" class="form-control"></select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-lg-6">
+                                <label class="control-label">Início:</label>
+                                <input type="date" class="form-control" ng-model="formData.dataInicio" required>
+                            </div>
+                            <div class="col-lg-6">
+                                <label class="control-label">Fim:</label>
+                                <input type="date" class="form-control" ng-model="formData.dataFim" required>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-12">
+            <input type="button" class="btn btn-primary pull-right btn-lg" value="Enviar" ng-click="salvarDados()" />
+
+            <a href="#/atividades" class="btn btn-danger pull-left btn-lg">Cancelar</a>
+        </div>
+    </div>
+</div>

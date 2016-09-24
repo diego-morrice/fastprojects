@@ -1,0 +1,30 @@
+﻿<div class="row">
+    <ol class="breadcrumb" style="margin-top: 20px">
+        <li><a href="#/home">Home</a></li>
+        <li><a href="#/projetos">Projetos</a></li>
+        <li class="active">Novo</li>
+    </ol>
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="panel panel-default">
+                <div class="panel-heading text-center"><h3>Novo projeto</h3></div>
+                <div class="panel-body">
+                    <form>
+                        <div class="form-group">
+                            <div class="col-lg-offset-3 col-lg-6">
+                                <label class="control-label">Nome:</label>
+                                <input type="text" class="form-control" ng-model="formData.nome">
+                            </div>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-12">
+            <input type="button" class="btn btn-primary pull-right btn-lg" value="Enviar" ng-click="salvarDados()" />
+
+            <a href="#/projetos" class="btn btn-danger pull-left btn-lg">Cancelar</a>
+        </div>
+    </div>
+</div>

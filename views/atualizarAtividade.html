@@ -1,0 +1,53 @@
+﻿<div class="row" ng-init="retornarAtividade()">
+    <ol class="breadcrumb" style="margin-top: 20px">
+        <li><a href="#/home">Home</a></li>
+        <li><a href="#/atividades">Atividades</a></li>
+        <li class="active">Atualizar</li>
+    </ol>
+
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="panel panel-default">
+                <div class="panel-heading text-center"> <h3>Atualizar atividade</h3></div>
+                <div class="panel-body">
+                    <form>
+                        <div class="form-group">
+                            <div class="col-lg-6">
+                                <label class="control-label">Nome:</label>
+                                <input type="text" class="form-control" ng-model="formData.nome" readonly>
+                            </div>
+                            <div class="col-lg-6">
+                                <label class="control-label">Projeto:</label>
+                                <input type="text" ng-model="formData.projeto.nome" class="form-control" readonly/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-lg-6">
+                                <label class="control-label">Profissional:</label>
+                                <select ng-model="formData.profissional" ng-options="val.nome for val in profissionais track by val.id" class="form-control"></select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-lg-6">
+                                <label class="control-label">Início:</label>
+                                <input type="text" class="form-control" ng-model="formData.dataInicioFormatada" readonly>
+                            </div>
+                            <div class="col-lg-6">
+                                <label class="control-label">Fim:</label>
+                                <input type="text" class="form-control" ng-model="formData.dataFimFormatada" readonly>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>            
+        </div>
+        <div class="col-lg-12">
+            <input type="button" class="btn btn-primary pull-right btn-lg" ng-click="salvarDados()" value="Enviar" />
+
+            <a href="#/atividades" class="btn btn-danger pull-left btn-lg">Cancelar</a>
+        </div>
+    </div>
+
+</div>
+

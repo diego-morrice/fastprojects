@@ -1,0 +1,38 @@
+﻿<div class="row">
+    <ol class="breadcrumb" style="margin-top: 20px">
+        <li class="active">Home</li>
+    </ol>
+    <div class="panel panel-default">
+        <div class="text-center panel-heading"><b>Mídia Social Empresa - Ultimas Atividades </b></div>
+        <div class="panel-body">
+            <div class="col-lg-12" style="margin-bottom:20px"></div>
+            <div class="col-lg-12">
+                <div class="table-responsive">
+                    <span class="text-center" ng-show="atividades.length == 0">Nenhuma atividade foi encontrada.</span>
+                    <table ng-show="atividades.length > 0" class="table table-bordered table-striped">
+                        <thead>
+                            <tr>
+                                <th>Nome</th>
+                                <th>Projeto</th>
+                                <th>Profissional</th>
+                                <th>Status</th>
+                                <th>Início</th>
+                                <th>Fim</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="ati in atividades">
+                                <td>{{ati.nome}}</td>
+                                <td>{{ati.projeto.nome}}</td>
+                                <td>{{ati.profissional.nome}}</td>
+                                <td>{{ati.status}}</td>
+                                <td>{{ati.dataInicioFormatada}}</td>
+                                <td>{{ati.dataFimFormatada}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

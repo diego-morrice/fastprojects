@@ -1,0 +1,11 @@
+﻿<div class="center-block" style="width:400px;">
+    <form class="form-login" role="form">
+        <h2 class="form-login-heading">Entrar</h2>
+        <input ng-keyup="$event.keyCode == 13 && entrar()" type="text" class="form-control" placeholder="Usuario" data-ng-model="dadosLogin.usuario" required autofocus>
+        <input ng-keyup="$event.keyCode == 13 && entrar()" type="text" class="form-control" placeholder="Senha" data-ng-model="dadosLogin.senha" required>
+        <button ng-disabled="dadosLogin.usuario == '' || dadosLogin.senha == ''" class="btn btn-lg btn-info btn-block" type="submit" data-ng-click="entrar()">Enviar</button>
+        <div data-ng-hide="mensagem == ''" class="alert alert-danger">
+            {{mensagem}}
+        </div>
+    </form>
+</div>

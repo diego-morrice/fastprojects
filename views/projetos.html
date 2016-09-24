@@ -1,0 +1,75 @@
+﻿<div class="row">
+
+    <ol class="breadcrumb" style="margin-top: 20px">
+        <li><a href="#/home">Home</a></li>
+        <li class="active">Projetos</li>
+    </ol>
+
+    <div class="col-lg-12">
+        <a href="#/novoProjeto" class="btn btn-primary pull-right " style="margin-bottom:10px;">Novo</a>
+    </div>
+
+    <div class="col-lg-12">
+        <div class="panel panel-default">
+            <div class="text-center panel-heading">
+                <h3> Projetos </h3>
+            </div>
+
+            <div class="panel-body">
+                <div class="col-lg-12">
+                    <div class="col-lg-12">
+                        <label class="control-label">Pesquisar:</label>
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Digite o nome do projeto" ng-model="pesquisar">
+                            <span class="input-group-btn">
+                                <button class="btn btn-primary" type="button" ng-click="retornarProjetoPorNome()">Pesquisar</button>
+                            </span>
+                        </div>
+                    </div>
+                    <!--<div class="col-lg-4">
+                        <label class="control-label">Ordenar:</label>
+                        <select class="form-control">
+                            <option>Decrescente</option>
+                            <option>Crescente</option>
+                        </select>
+                    </div>-->
+                </div>
+
+                <div class="col-lg-12" style="margin-bottom:20px"></div>
+                <div class="col-lg-12">
+                    <div class="col-lg-12">
+                        <div class="table-responsive">
+                            <span class="text-center" ng-show="projetos.length == 0">Nenhum projeto foi encontrada.</span>
+                            <table ng-show="projetos.length > 0" class="table table-bordered table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>Nome</th>
+                                        <th>Status</th>
+                                        <th>Data de Cadastro</th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr ng-repeat="pro in projetos">
+                                        <td>{{pro.nome}}</td>
+                                        <td>{{pro.status}}</td>
+                                        <td>{{pro.dataCriacaoFormatada}}</td>
+                                        <td>
+                                            <a href="#/atualizarProjeto/{{pro.id}}" class="btn btn-default btn-md">Atualizar</a>
+                                            <input ng-show="!pro.ativo" ng-click="ativar(pro)" type="button" value="Ativar" class="btn btn-success">
+                                            <a ng-show="pro.ativo" ng-click="inativar(pro.id)" class="btn btn-danger btn-md">Inativar</a>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="text-center">
+        <button type="button" class="btn btn-default btn-lg" onclick="window.history.back()">Voltar</button>
+    </div>
+</div>
+
